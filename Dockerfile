@@ -18,7 +18,7 @@ RUN set -eux; \
     esac; \
     curl -fsSL "https://github.com/tastypear/ttyd/releases/download/${TTYD_VERSION}/ttyd.${ttyd_arch}" -o ttyd; \
     curl -fsSL "https://github.com/tastypear/handy-sshd/releases/download/v${HANDY_SSHD_VERSION}/handy-sshd-${HANDY_SSHD_VERSION}-linux-${arch}.tar.gz" -o /tmp/handy-sshd.tar.gz; \
-    tar -xzf /tmp/handy-sshd.tar.gz -C /tmp; \
+    tar -xzf /tmp/handy-sshd.tar.gz -C /tmp --no-same-owner; \
     cp "/tmp/handy-sshd-${HANDY_SSHD_VERSION}-linux-${arch}/handy-sshd" .; \
     rm -rf /tmp/handy-sshd.tar.gz "/tmp/handy-sshd-${HANDY_SSHD_VERSION}-linux-${arch}"; \
     curl -fsSL "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-${cf_arch}" -o cloudflared; \
