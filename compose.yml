@@ -1,0 +1,16 @@
+services:
+  box:
+    build: .
+    ports:
+      - "7681:7681"
+    volumes:
+      - data:/data
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 1G
+    restart: unless-stopped
+
+volumes:
+  data:
